@@ -7,8 +7,8 @@ import {useNavigate} from "react-router-dom"
 import {useEffect,useState,useContext} from "react";
 import {getProductRequest,getProduct} from "../../Redux/Allproduct/action";
 import { CartProvider } from '../../Context/CartContextProvider';
-import {getbeautyProduct} from '../../Server/Apis'
-import {getmensProduct} from '../../Server/Apis';
+// import {getbeautyProduct} from '../../Server/Apis'
+// import {getmensProduct} from '../../Server/Apis';
 
 
 export default function ResponsiveProducts(){
