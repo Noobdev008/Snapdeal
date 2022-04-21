@@ -5,9 +5,9 @@ import Cards from './Cards'
 import {useSelector,useDispatch,shallowEqual} from "react-redux";
 import {useNavigate} from "react-router-dom"
 import {useEffect,useState,useContext} from "react";
-import {getProductRequest,getProduct} from "../../Redux/Allproduct/action";
-import { CartProvider } from '../../Context/CartContextProvider';
-import {getbeautyProduct} from '../../Server/Apis'
+//import {getProductRequest,getProduct} from "../../Redux/Allproduct/action";
+//import { CartProvider } from '../../Context/CartContextProvider';
+//import {getbeautyProduct} from '../../Server/Apis'
 
 
 export const BestsellerScorlling = () => {
