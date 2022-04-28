@@ -4,21 +4,22 @@ import cart from "../assets/images/cart.png"
 import React from 'react'
 import TextField from '@material-ui/core/TextField';
 import Autocomplete, { createFilterOptions } from '@material-ui/lab/Autocomplete';
-import { Link } from "react-router-dom";
+import { Link, useHistory } from 'react-router-dom'
 
 
 
 
 
 const Navbar = () => {
-
+    const history = useHistory()
+    const myOptions = ['Men', 'Women', 'Jwellery', 'Shirts', 't-shirts'];
     const filterOptions = createFilterOptions({
         matchFrom: 'start',
         stringify: option => option,
     });
 
     // Sample options for search box
-    const myOptions = ['Men', 'Women', 'Jwellery', 'Shirts', 't-shirts'];
+    
 
     // <Autocomplete
     //                         style={{ width: 500 }}
@@ -32,6 +33,12 @@ const Navbar = () => {
     //                             />
     //                         )}
     //                     />
+
+    const handleSubmit = (e) => {
+        e.preventDefault();
+        history.push('/men');
+
+    };
 
 
 
@@ -52,14 +59,19 @@ const Navbar = () => {
                         <img src={logo} alt="" srcset="" />
                     </div>
                     <div className="inputbox">
-                        <input type="text" placeholder="Search products & brands" name="search" filterOptions={filterOptions}  options={myOptions}
+                    <Autocomplete className="input"
+                            style={{ width: 500 }}
+                            freeSolo
+                            filterOptions={filterOptions}
+                            options={myOptions}
                             renderInput={(params) => (
                                 <TextField {...params}
                                     variant="outlined"
                                     label="Search Box"
                                 />
-                            )} />
-                        <button type="search">Search</button>
+                            )}
+                        />
+                        <button type="search" onSubmit={handleSubmit} >Search</button>
                     </div>
                     <div className="login">
                         <p className="cart" >Cart</p>

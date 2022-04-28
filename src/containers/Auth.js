@@ -38,8 +38,8 @@ const Auth = () => {
             id: 3,
             name: "birthday",
             type: "date",
-            placeholder: "Birthday",
-            label: "Birthday",
+            placeholder: "birthDate",
+            label: "Birth-Date",
         },
         {
             id: 4,
@@ -72,7 +72,7 @@ const Auth = () => {
 
     const onChange = (e) => {
         setValues({ ...values, [e.target.name]: e.target.value });
-        <Link to="/product"></Link>
+        // <Link to="/product"></Link>
     };
 
 
