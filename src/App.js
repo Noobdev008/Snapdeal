@@ -15,6 +15,7 @@ import ProductListingElectronic from './containers/ProductListingElec'
 import LowToHigh from './containers/LowToHigh'
 import HighToLow from './containers/HighToLow'
 import Signup from './containers/Signup'
+import Cart from './containers/Cart'
 
 function App() {
   return (
@@ -24,6 +25,7 @@ function App() {
         <HomeSidebar />
         <Switch>
           <Route path="/" exact component={Signup} />
+          <Route path="/product/cart" exact component={Cart} />
           <Route path="/product" exact component={ProductListing} />
           <Route path="/product/men" exact component={ProductListingMen} />
           <Route path="/product/women" exact component={ProductListingWomen} />

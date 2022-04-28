@@ -5,6 +5,7 @@ import { useDispatch, useSelector } from "react-redux";
 import {
   selectedProduct,
   removeSelectedProduct,
+  addItem,
 } from "../redux/actions/productsActions";
 
 const ProductDetails = () => {
@@ -27,6 +28,19 @@ const ProductDetails = () => {
       dispatch(removeSelectedProduct());
     };
   }, [productId]);
+
+  const added = (e)=>{
+    e.preventDefault();
+    alert("Product Added")
+  
+  }
+  const addItems =(product)=>{
+   
+    dispatch(addItem(product));
+    // alert("Added product")
+   
+  }
+  
   return (
     <div className="ui grid container">
       {Object.keys(product).length === 0 ? (
@@ -50,7 +64,7 @@ const ProductDetails = () => {
                   <div className="hidden content">
                     <i className="shop icon"></i>
                   </div>
-                  <div className="visible content">Add to Cart</div>
+                  <button className="visible content" onClick={[addItems(product),added]}>Add to Cart</button>
                 </div>
               </div>
             </div>

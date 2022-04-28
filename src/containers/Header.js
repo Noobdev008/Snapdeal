@@ -5,12 +5,16 @@ import React from 'react'
 import TextField from '@material-ui/core/TextField';
 import Autocomplete, { createFilterOptions } from '@material-ui/lab/Autocomplete';
 import { Link, useHistory } from 'react-router-dom'
+import { useSelector } from 'react-redux'
+// import item from '../redux/actions/productsActions'
+
 
 
 
 
 
 const Navbar = () => {
+    const state = useSelector((state) => state.addItems)
     const history = useHistory()
     const myOptions = ['Men', 'Women', 'Jwellery', 'Shirts', 't-shirts'];
     const filterOptions = createFilterOptions({
@@ -19,7 +23,7 @@ const Navbar = () => {
     });
 
     // Sample options for search box
-    
+
 
     // <Autocomplete
     //                         style={{ width: 500 }}
@@ -59,7 +63,7 @@ const Navbar = () => {
                         <img src={logo} alt="" srcset="" />
                     </div>
                     <div className="inputbox">
-                    <Autocomplete className="input"
+                        <Autocomplete className="input"
                             style={{ width: 500 }}
                             freeSolo
                             filterOptions={filterOptions}
@@ -74,13 +78,15 @@ const Navbar = () => {
                         <button type="search" onSubmit={handleSubmit} >Search</button>
                     </div>
                     <div className="login">
-                        <p className="cart" >Cart</p>
-                      <Link to={'/'}>
-                      <p className="cart">Logout</p>
-                      </Link> 
-                       
-                      
-                       
+                        <Link to={'/product/cart'}>
+                            <button className="cart" >Cart({state.length})</button>
+                        </Link>
+                        <Link to={'/'}>
+                            <p className="cart">Logout</p>
+                        </Link>
+
+
+
                     </div>
                 </div>
 
